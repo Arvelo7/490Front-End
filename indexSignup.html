@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>Login/Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="pw-meter">
+ <center><h3>theGet</h3></center>
+
+  <div class="form-element">
+    <form action="#">
+    <div if="error-text"class="error-text"></div>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" class="password" placeholder= "Password" id="password">
+    <br/>
+    <input type="password" class="password_field" placeholder="Confirm Password" id="password_field" />
+    
+    <button class="button1" id="button1">Check</button>
+    <div class="pw-display-toggle-btn">
+      <i class="fa fa-eye"></i>
+      <i class="fa fa-eye-slash"></i>
+    </div>
+    <div class="pw-strength">
+      <span>Weak</span>
+      <span></span>
+    
+    <button id="button1" onclick="signup()">Create Account</button>
+  </div>
+</div>
+<div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Logged in</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+</form>
+  
+   
+   <script> 
+    const errorText = document.querySelector(".error-text");
+  document.querySelector('.button1').onclick=function(){
+   var password = document.querySelector('.password').value,
+   password_field = document.querySelector('.password_field').value;
+    if(password == ""){
+      alert("Field cannot be emty");
+    }
+    else if(password != password_field){
+     
+      errorText.textContent = "Passwords does not  Match!";
+      return false
+    }
+    else if (password == password_field){
+      errorText.textContent = "Both Passwords Match!";
+      errorText.classList.add('match');
+    }
+    return true;
+    }
+  
+</script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+  apiKey: "AIzaSyDZg0i5SKjQ34OlQusgrjcgbLXi9w888b4",
+  authDomain: "theget-a18fd.firebaseapp.com",
+  projectId: "theget-a18fd",
+  storageBucket: "theget-a18fd.appspot.com",
+  messagingSenderId: "790841259340",
+  appId: "1:790841259340:web:2d43874775de7c0d66cbe9"
+};
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</script>
+  <script src="index.js"></script>
+
+</body>
+</html>

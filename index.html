@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Login/Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="login_div" class="main-div">
+    <center><h3>theGet</h3></center>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password" />
+
+    <button onclick="login()">Login to Account</button>
+    <br>
+    <button onclick="location.href='indexSignup.html';"">Create Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+  apiKey: "AIzaSyDZg0i5SKjQ34OlQusgrjcgbLXi9w888b4",
+  authDomain: "theget-a18fd.firebaseapp.com",
+  projectId: "theget-a18fd",
+  storageBucket: "theget-a18fd.appspot.com",
+  messagingSenderId: "790841259340",
+  appId: "1:790841259340:web:2d43874775de7c0d66cbe9"
+};
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</script>
+  <script src="index.js"></script>
+
+</body>
+</html>
